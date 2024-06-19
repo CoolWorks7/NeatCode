@@ -18,6 +18,7 @@ import Notice from '@/app/_components/notice'
 
 
 export default function Problem({params}) {
+    const {app_url} = process.env
     const router = useRouter()
     const dispatch = useDispatch()
     const user = useSelector(state => state.authReducer.user)
@@ -51,7 +52,7 @@ export default function Problem({params}) {
     }, [user, router])
 
     async function handleGetProblem(id) {
-        let result = await fetch(`/api/problems/${id}/${params.problem_id}`, {
+        let result = await fetch(`${app_url}/api/problems/${id}/${params.problem_id}`, {
             method: "GET"
         })
         let res = await result.json()
@@ -60,7 +61,7 @@ export default function Problem({params}) {
     }
 
     async function deleteProblem() {
-        let result = await fetch(`/api/problems/${user._id}/${params.problem_id}`, {
+        let result = await fetch(`${app_url}/api/problems/${user._id}/${params.problem_id}`, {
             method: "DELETE"
         })
         let res = await result.json()

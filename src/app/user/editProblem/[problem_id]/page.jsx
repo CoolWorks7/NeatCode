@@ -15,6 +15,7 @@ import FileName from '@/app/_components/fileName'
 import Notice from '@/app/_components/notice'
 
 export default function AddProblem({params}) {
+    const {app_url} = process.env
     const dispatch = useDispatch()
     const user = useSelector(state => state.authReducer.user)
     const router = useRouter()
@@ -53,7 +54,7 @@ export default function AddProblem({params}) {
 
 
     async function handleGetProblem(id) {
-        let result = await fetch(`/api/problems/${id}/${params.problem_id}`, {
+        let result = await fetch(`${app_url}/api/problems/${id}/${params.problem_id}`, {
             method: "GET"
         })
         let res = await result.json()

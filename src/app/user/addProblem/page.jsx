@@ -16,6 +16,7 @@ import Notice from '@/app/_components/notice'
 
 
 export default function AddProblem() {
+  const {app_url} = process.env
   const dispatch = useDispatch()
   const user = useSelector(state => state.authReducer.user)
   const router = useRouter()
@@ -82,7 +83,7 @@ export default function AddProblem() {
       platform
     }
 
-    let result = await fetch(`/api/problems/${user._id}/addProblem`, {
+    let result = await fetch(`${app_url}/api/problems/${user._id}/addProblem`, {
       method: 'POST',
       body: JSON.stringify(payload)
     })
