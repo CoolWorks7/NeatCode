@@ -53,7 +53,7 @@ export default function Login() {
     if (formData.password.trim().length < 6) return setError(`Password Cannot be less than 6 letters!`)
 
     // calling the api
-    let result = await fetch('/api/login', {
+    let result = await fetch('https://neat-code.netlify.app/api/login', {
       method: 'POST',
       body: JSON.stringify(formData)
     })
