@@ -26,11 +26,11 @@ export default function Register() {
 
   useEffect(() => {
     if (!user.isAuth) dispatch(getAuth())
-  }, [0])
+  }, [])
 
   useEffect(() => {
     if (user.isAuth) router.push('/user/problems')
-  }, [user])
+  }, [])
 
 
   function updateForm(e) {

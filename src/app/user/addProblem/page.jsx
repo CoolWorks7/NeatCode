@@ -38,7 +38,7 @@ export default function AddProblem() {
   useEffect(() => {
       if (!user.isAuth) dispatch(getAuth())
       // console.log(user);
-  }, [0])
+  }, [])
 
   useEffect(() => {
       let res = localStorage.getItem('NeatCodeUser')
@@ -48,7 +48,7 @@ export default function AddProblem() {
           if (res.email == '') router.push('/')
       }
       else router.push('/')
-  }, [user])
+  }, [])
 
 
   function updateForm(e) {

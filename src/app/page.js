@@ -41,7 +41,7 @@ export default function Home() {
 
   useEffect(() => {
     dispatch(getAuth())
-  }, [0])
+  }, [])
   
   return (
     <main className={styles.main}>
