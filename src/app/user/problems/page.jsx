@@ -15,7 +15,6 @@ import Link from 'next/link'
 import Notice from '@/app/_components/notice'
 
 export default function Problems({params}) {
-    const {app_url} = process.env
     const [error, setError] = useState('')
     const [orderBy, setOrderBy] = useState('Descending')
     const [selectBy, setSelectBy] = useState('Created At')
@@ -42,7 +41,7 @@ export default function Problems({params}) {
     }, [user, router])    
 
     async function getProblems(id) {
-        let result = await fetch(`${app_url}/api/problems/${id}`, {
+        let result = await fetch(`/api/problems/${id}`, {
             method: 'GET'
         })
         let response = await result.json()

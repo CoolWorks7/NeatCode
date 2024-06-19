@@ -15,7 +15,6 @@ import { getAuth } from '@/redux/features/authSlice'
 
 
 export default function Login() {
-  const {app_url} = process.env
   const dispatch = useDispatch()
   const user = useSelector(state => state.authReducer.user)
   const router = useRouter()
@@ -54,7 +53,7 @@ export default function Login() {
     if (formData.password.trim().length < 6) return setError(`Password Cannot be less than 6 letters!`)
 
     // calling the api
-    let result = await fetch(`${app_url}/api/login`, {
+    let result = await fetch('/api/login', {
       method: 'POST',
       body: JSON.stringify(formData)
     })
