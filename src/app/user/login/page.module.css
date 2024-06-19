@@ -1,0 +1,70 @@
+.main{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 100dvh;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--pad-1);
+    flex: 1;
+}
+
+.form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.form h1{
+    color: var(--secondary);
+}
+
+.details{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-block: 3rem;
+}
+
+.form button{
+    padding: 0.75rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: var(--secondary);
+    color: var(--white);
+    font-weight: 500;
+    margin-block: 1rem;
+    transition: letter-spacing .3s ease;
+}
+.form button:hover, .form button:focus{
+    outline: 2px solid var(--secondary);
+    outline-offset: 4px;
+    letter-spacing: 5px;
+}
+
+.note{
+    font-size: 0.9rem;
+    display: flex;
+    gap: 0.3rem;
+    color: var(--secondary);
+    justify-content: center;
+}
+.note a{
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--secondary);
+}
+
+.bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+}

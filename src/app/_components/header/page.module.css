@@ -1,0 +1,160 @@
+.header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    background: var(--bg);
+    cursor: pointer;
+    z-index: 100;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.mobileMenu{
+    display: none;
+    position: absolute;
+    top: 99%;
+    right: 0;
+    flex: 1;
+    height: 90dvh;
+    width: 100dvw;
+    flex-direction: column;
+    align-items: center;
+    background: var(--bg);
+    gap: 2rem;
+    padding: 4rem;
+    box-sizing: border-box;
+}
+.mobileMenuOpen{
+    display: none;
+    font-size: 1.5rem;
+}
+.mobileMenuClose{
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    font-size: 1.5rem;
+}
+.menu{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+.menu.sp2{
+    gap: 2rem;
+}
+
+.menu li,
+.mobileMenu li{
+    list-style: none;
+}
+.menu li a,
+.mobileMenu li a{
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--txt-3);
+    cursor: pointer;
+    padding: 0.5rem;
+}
+.menu li:hover a{
+    color: var(--txt-1);
+}
+
+.menu li.register a {
+    padding: 0.7rem 1.3rem;
+    background: var(--secondary);
+    color: var(--icons);
+    transition: background .3s ease, color .3s ease;
+}
+.menu li.register.active a,
+.menu li.register:hover a{
+    outline: 2px solid var(--secondary);
+    outline-offset: -2px;
+    background: var(--bg);
+    color: var(--txt-1);
+}
+
+
+li.active a{
+    color: var(--secondary);
+    border-bottom: 2px solid var(--secondary);
+}
+
+.logout{
+    /* background: var(--secondary); */
+    /* padding: 0.7rem 1.3rem; */
+    position: relative;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* transition: all .3s ease; */
+}
+.logout::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 160%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background: var(--secondary);
+    z-index: -1;
+}
+
+.logout:hover .about{
+    display: block;
+}
+
+.about{
+    position: absolute;
+    top: 50%;
+    right: 160%;
+    transform: translate(0, -50%);
+    padding: 0.3rem 0.5rem;
+    font-size: 0.8rem;
+    background: var(--white);
+    white-space: nowrap;
+    color: var(--secondary);
+    font-weight: 400;
+    display: none;
+}
+
+/* .logout:hover{
+    background: var(--white);
+    border: 1px solid var(--secondary);
+    color: var(--secondary);
+} */
+
+@media only screen and (max-width: 665px) {
+    .menu {
+        display: none;
+    }
+    .mobileMenu {
+        display: flex;
+    }
+    .mobileMenuOpen {
+        display: block;
+    }
+    .mobileMenu li a {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 565px) {
+    .logo {
+        font-size: 1.1rem;
+    }
+}

@@ -1,0 +1,191 @@
+.main{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 100dvh;
+    --pad-1: 2rem 6rem;
+}
+
+.container{
+    display: flex;
+    padding: var(--pad-1);
+    /* flex-direction: row-reverse; */
+    /* flex: 1; */
+    /* height: 200dvh; */
+    gap: 2rem;
+}
+
+.container h1{
+    font-size: clamp(1.7rem, 5vw, 2rem);
+    color: var(--secondary);
+}
+
+
+.left{
+    /* padding: 2rem;
+    border-radius: 0.5rem;
+    background: var(--white); */
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 2rem;
+    /* --input-width: auto; */
+}
+
+.left button{
+    padding: 1rem;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background: var(--secondary);
+    color: var(--white);
+    font-weight: 500;
+    transition: all .3s ease;
+    cursor: pointer;
+}
+.left button:hover,
+.left button:focus{
+    background: var(--white);
+    color: var(--secondary);
+    letter-spacing: 5px;
+}
+
+.left input {
+    width: 100%;
+}
+
+.tagArea{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.tagArea input {
+    padding: 0.5rem;
+    background: transparent;
+    outline: none;
+    border: none;
+    background: var(--white);
+    border-radius: 5px;
+    color: var(--txt-1);
+}
+
+.tagArea .tags{
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.tagArea .tags .tag{
+    padding: 0.3rem 0.6rem;
+    font-size: 0.75rem;
+    border-radius: 50px;
+    font-weight: 500;
+    color: var(--secondary);
+    background: var(--tag-gray);
+    display: flex;
+    gap: 0.3rem;
+    align-items: center;
+    cursor: default;
+}
+
+.tagArea .tags::-webkit-scrollbar {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 2px;
+}
+.tagArea .tags::-webkit-scrollbar-thumb {
+    background: var(--txt-2);
+}
+
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    z-index: 50;
+}
+
+/* .left input{
+    padding: 1rem;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+} */
+
+.right{
+    /* position: relative;
+    display: flex;
+    flex-direction: column; */
+    /* flex: 2; */
+    
+    position: sticky;
+    top: 6rem;
+    align-self: flex-start;
+    width: 60%;
+    /* background: #f66; */
+    height: 75dvh;
+}
+
+.filesList{
+    position: relative;
+    display: flex;
+    overflow-x: scroll;
+    background: #0e0e0e;
+}
+
+.filesList span{
+    padding: 0.4rem 0.8rem;
+    background: #000;
+    color: #919191;
+    font-size: 0.8rem;
+    /* font-family: 'Poppins', sans-serif; */
+    border: 1px solid #333;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: flex;
+    gap: 0.3rem;
+    align-items: center;
+    white-space: nowrap;
+}
+.filesList span.active, .filesList span:hover{
+    /* border-bottom: 2px solid #2481b0; */
+    background: #1f1f1f;
+    color: var(--white);
+}
+
+.filesList span.addFile{
+    /* padding: 0.4rem 20rem; */
+    font-size: 1rem;
+    position: sticky;
+    right: 0;
+}
+
+.filesList::-webkit-scrollbar {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 2px;
+}
+.filesList::-webkit-scrollbar-thumb {
+    background: var(--txt-2);
+}
+
+
+
+@media only screen and (max-width: 800px) {
+    .container{
+        flex-direction: column;
+        --pad-1: 2rem 4rem
+    }
+    .container .right{
+        position: relative;
+        top: 0;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .container{
+        --pad-1: 1.5rem 2rem
+    }
+}

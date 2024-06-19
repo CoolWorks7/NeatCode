@@ -1,0 +1,39 @@
+.inputBox{
+    position: relative;
+    /* background: #f66; */
+    /* width: 100%; */
+}
+.input{
+    border: none;
+    outline: none;
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--txt-1);
+    background: transparent;
+    padding: 0.75rem 0.1rem;
+    /* width: var(--input-width); */
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    /* font-weight: 500; */
+}
+
+.inputBox label{
+    position: absolute;
+    top: 50%;
+    left: 0.1rem;
+    transform: translate( 0, -50%);
+    pointer-events: none;
+    color: var(--txt-1);
+    transition: all .3s ease;
+}
+
+.inputBox input:focus,
+.inputBox input:not(:placeholder-shown){
+    border-bottom: 2px solid var(--secondary);
+}
+.inputBox input:focus ~ label, 
+.inputBox input:not(:placeholder-shown) ~ label{
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--secondary);
+    top: -0%;
+}

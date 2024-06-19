@@ -1,0 +1,39 @@
+span.normal, span.active{
+    position: relative;
+    padding: 0.4rem 0.8rem;
+    background: #000;
+    color: #919191;
+    font-size: 0.8rem;
+    /* font-family: 'Poppins', sans-serif; */
+    border: 1px solid #333;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: flex;
+    gap: 0.3rem;
+    align-items: center;
+    white-space: nowrap;
+}
+span.active,  span.normal:hover{
+    /* border-bottom: 2px solid #2481b0; */
+    background: #1f1f1f;
+    color: var(--white);
+}
+
+span.active input{
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 100%;
+    color: var(--white);
+    font-size: 0.8rem;
+}
+span.active input::placeholder{
+    color: var(--txt-2);
+}
+
+span.normal.addFile{
+    /* padding: 0.4rem 20rem; */
+    font-size: 1rem;
+    position: sticky;
+    right: 0;
+}

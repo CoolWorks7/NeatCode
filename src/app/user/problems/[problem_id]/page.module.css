@@ -1,0 +1,311 @@
+.main{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 100dvh;
+    --pad-1: 2rem 6rem;
+}
+
+.container{
+    display: flex;
+    padding: var(--pad-1);
+    /* flex-direction: row-reverse; */
+    /* flex: 1; */
+    /* height: 200dvh; */
+    gap: 2rem;
+}
+
+.container h1{
+    font-size: clamp(1.7rem, 5vw, 2rem);
+    color: var(--secondary);
+}
+
+.top{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.top span{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    cursor: pointer;
+}
+
+.menu {
+    position: absolute;
+    top: 2rem;
+    right: 0;
+    border-radius: 5px;
+    background: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.kebab{
+    transform: rotate(90deg);
+    /* padding: 0.5rem; */
+    /* font-size: 3rem; */
+}
+.menu .elem{
+    font-size: 0.8rem;
+    color: var(--txt-1);
+    padding: 0.5rem;
+    border: none;
+    outline: none;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    color: var(--txt-1);
+    font-weight: 500;
+    cursor: pointer;
+}
+.menu .elem:hover {
+    backdrop-filter: brightness(90%);
+}
+
+.info{
+    display: flex;
+    /* flex-direction: row-reverse; */
+    align-items: flex-start;
+    gap: 0.5rem;
+    /* justify-content: space-between; */
+    align-items: center;
+}
+.info a {
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--txt-3);
+}
+.info a:hover {
+    color: var(--txt-1);
+}
+
+.difficulty{
+    padding: 0.3rem 0.5rem;
+    font-size: 0.7rem;
+    width: fit-content;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: default;
+}
+.difficulty[data-mode="Easy"] {
+    border: 1px solid var(--easy-2);
+    color: var(--easy-2);
+    background: var(--easy-1);
+}
+.difficulty[data-mode="Medium"] {
+    border: 1px solid var(--mid-2);
+    color: var(--mid-2);
+    background: var(--mid-1);
+}
+.difficulty[data-mode="Hard"] {
+    border: 1px solid var(--hard-2);
+    color: var(--hard-2);
+    background: var(--hard-1);
+}
+
+.description{
+    font-size: 0.8rem;
+    line-height: 135%;
+    font-weight: 500;
+    color: var(--txt-1);
+    padding: 0.5rem;
+    border-radius: 5px;
+    background: #f4f4f4;
+    backdrop-filter: opacity(0.1);
+}
+
+.edit{
+    border: none;
+    outline: none;
+    background: transparent;
+    display: flex;
+    gap: 0.5rem;
+    color: var(--txt-2);
+    font-size: 0.9rem;
+    cursor: pointer;
+    width: fit-content;
+    padding: 0.5rem;
+    font-weight: 500;
+}
+.edit:hover{
+    color: var(--txt-1);
+}
+
+
+.confirmContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: brightness(80%) blur(5px);
+}
+.confirm {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem;
+    border-radius: 5px;
+    background: var(--secondary);
+    color: var(--white);
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    justify-content: space-between;
+    white-space: nowrap;
+    /* width: var(--input-width); */
+}
+.confirm .buttons{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    /* gap: 4rem; */
+}
+.confirm .buttons button{
+    border: none;
+    outline: none;
+    color: var(--gray);
+    background: transparent;
+    cursor: pointer;
+}
+.confirm .buttons button:hover{
+    color: var(--white);
+}
+
+.left{
+    position: relative;
+    /* padding: 2rem;
+    border-radius: 0.5rem;
+    background: var(--white); */
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 1.5rem;
+    /* --input-width: auto; */
+}
+
+
+.tags{
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tags .tag{
+    padding: 0.3rem 0.6rem;
+    font-size: 0.75rem;
+    border-radius: 50px;
+    font-weight: 500;
+    color: var(--secondary);
+    background: var(--tag-gray);
+    display: flex;
+    gap: 0.3rem;
+    align-items: center;
+    cursor: default;
+}
+/* 
+.tagArea .tags::-webkit-scrollbar {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 2px;
+}
+.tagArea .tags::-webkit-scrollbar-thumb {
+    background: var(--txt-2);
+} */
+
+
+
+/* .left input{
+    padding: 1rem;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+} */
+
+.right{
+    /* position: relative;
+    display: flex;
+    flex-direction: column; */
+    /* flex: 2; */
+    
+    position: sticky;
+    top: 6rem;
+    align-self: flex-start;
+    width: 60%;
+    /* background: #f66; */
+    height: 75dvh;
+}
+
+.filesList{
+    position: relative;
+    display: flex;
+    overflow-x: scroll;
+    background: #0e0e0e;
+}
+
+.filesList span{
+    padding: 0.4rem 0.8rem;
+    background: #000;
+    color: #919191;
+    font-size: 0.8rem;
+    /* font-family: 'Poppins', sans-serif; */
+    border: 1px solid #333;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: flex;
+    gap: 0.3rem;
+    align-items: center;
+    white-space: nowrap;
+}
+.filesList span.active, .filesList span:hover{
+    /* border-bottom: 2px solid #2481b0; */
+    background: #1f1f1f;
+    color: var(--white);
+}
+
+.filesList span.addFile{
+    /* padding: 0.4rem 20rem; */
+    font-size: 1rem;
+    position: sticky;
+    right: 0;
+}
+
+.filesList::-webkit-scrollbar {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 2px;
+}
+.filesList::-webkit-scrollbar-thumb {
+    background: var(--txt-2);
+}
+
+
+
+@media only screen and (max-width: 800px) {
+    .container{
+        flex-direction: column;
+        --pad-1: 2rem 4rem
+    }
+    .container .right{
+        position: relative;
+        top: 0;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .container{
+        --pad-1: 1.5rem 2rem
+    }
+}

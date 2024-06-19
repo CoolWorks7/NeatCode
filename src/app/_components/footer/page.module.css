@@ -1,0 +1,14 @@
+.footer{
+    position: relative;
+    padding: 1rem 2rem;
+    background: var(--secondary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rights, .creator{
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--icons);
+}
