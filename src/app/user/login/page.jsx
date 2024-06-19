@@ -27,11 +27,11 @@ export default function Login() {
 
   useEffect(() => {
     if (!user.isAuth) dispatch(getAuth())
-  }, [])
+  }, [0])
   
   useEffect(() => {
     if (user.isAuth) router.push('/user/problems')
-  }, [])
+  }, [user, router])
 
 
   function updateForm(e) {
@@ -83,7 +83,7 @@ export default function Login() {
 
           <div className={styles.bottom}>
             <div className={styles.note}>
-              Don't have an Account?? 
+              {"Don't have an Account??"}
               <Link href='/user/register'>Register</Link>
             </div>
 

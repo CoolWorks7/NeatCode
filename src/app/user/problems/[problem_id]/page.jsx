@@ -38,7 +38,7 @@ export default function Problem({params}) {
 
     useEffect(() => {
         if (!user.isAuth) dispatch(getAuth())
-    }, [])
+    }, [0])
   
     useEffect(() => {
         let res = localStorage.getItem('NeatCodeUser')
@@ -48,7 +48,7 @@ export default function Problem({params}) {
             else handleGetProblem(res._id)
         }
         else router.push('/')
-    }, [])
+    }, [user, router])
 
     async function handleGetProblem(id) {
         let result = await fetch(`/api/problems/${id}/${params.problem_id}`, {
